@@ -40,7 +40,7 @@ ggplot(avg_saturatedfat, aes(x = Company, y = SaturatedFat_g, fill = Company)) +
        y = "Trung bình chất béo bão hòa")
 #top 5
 library(ggplot2)
-
+library(dplyr)
 top5 <- data %>%
   filter(Calories > 0) %>%
   mutate(ProteinPerCalories = Protein_g / Calories) %>%
@@ -55,4 +55,5 @@ ggplot(top5, aes(x = reorder(Item, ProteinPerCalories),
   labs(title = "Top 5 món ăn có tỉ lệ Protein/Calories cao nhất theo công ty",
        x = "Món ăn",
        y = "Tỉ lệ Protein / Calories")
+
 
